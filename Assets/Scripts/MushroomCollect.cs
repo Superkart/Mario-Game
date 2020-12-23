@@ -13,7 +13,8 @@ public class MushroomCollect : MonoBehaviour
         {
             this.transform.position = new Vector3(0, -1000, 0);
             GrowSound.Play();
-            ThePlayer.transform.localScale += new Vector3(0.3f, 0.3f, 0.3f);
+            int gameLives = GamePersistantData.GetPersistantData().CurrentGameLives;
+            GamePersistantData.GetPersistantData().CurrentGameLives = ++gameLives;
         }
         
     }

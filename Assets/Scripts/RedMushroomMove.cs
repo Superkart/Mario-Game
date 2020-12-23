@@ -4,36 +4,24 @@ using UnityEngine;
 
 public class RedMushroomMove : MonoBehaviour
 {
-    float LeftPoint = -20f;
-    float RightPoint = 12f;
-    int Direction = 1;
-
-
-
-
-    // Update is called once per frame
-    void Update()
+    private Vector3 positionDisplacement;
+    private Vector3 positionOrigin;
+    private float _timePassed;
+    [Range(0f, 1f)]
+    public float Speed = 0.1f;
+    public float Magnitude = 0f;
+    private void Start()
     {
-        transform.parent = null;
-        if (Direction == 1)
-        {
-            transform.Translate(Vector3.right * 2 * Time.deltaTime, Space.World);
-            Direction = 1;
+       // float randomDistance = Random.Range(-Magnitude, Magnitude);
+        positionDisplacement = new Vector3(Magnitude, 0f, 0f);
+        positionOrigin = transform.position;
+    }
 
-        }
-        if (this.transform.position.x > RightPoint)
-        {
-            Direction = 2;
-        }
-        if (Direction == 2)
-        {
-            transform.Translate(Vector3.right * -2 * Time.deltaTime, Space.World);
-            Direction = 2;
-        }
+    private void Update()
+    {
+        _timePassed += Time.deltaTime;
+        transform.position = Vector3.Lerp(positionOrigin, positionOrigin + positionDisplacement,
+            Mathf.PingPong(_timePassed * Speed, 1));
 
-        if (this.transform.position.x < LeftPoint)
-        {
-            Direction = 1;
-        }
     }
 }

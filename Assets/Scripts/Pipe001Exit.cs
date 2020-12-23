@@ -36,7 +36,7 @@ public class Pipe001Exit : MonoBehaviour
         MainCam.SetActive(true);
        
         SecondCam.SetActive(false);
-        MainPlayer.transform.localPosition = new Vector3(39.84f, 8.48f, MainPlayer.transform.localPosition.z);
+        MainPlayer.transform.localPosition = new Vector3(159.86f, 14.07f, MainPlayer.transform.localPosition.z);
     }
 
 }

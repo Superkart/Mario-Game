@@ -48,7 +48,7 @@ public class Pipe001Entry : MonoBehaviour
         SecondCam.SetActive(true);
         MainCam.SetActive(false);
        
-        MainPlayer.transform.localPosition = new Vector3(12.5f, -3.75f, -1.75f);
+        MainPlayer.transform.localPosition = new Vector3(126.1f, -11.68f, 0f);
     }
 
 
