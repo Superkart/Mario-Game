@@ -7,22 +7,22 @@ public class QuestionBlock001 : MonoBehaviour
     public GameObject QuestionBlock;
     public GameObject DeadBlock;
     public GameObject Mushroom;
-    
+    bool _isBlockActivated = false;
 
     public void OnTriggerEnter(Collider col)
     {
+        if(!_isBlockActivated)
+            StartCoroutine(ActivateBlock());
+    }
+
+    IEnumerator ActivateBlock()
+    {
+        _isBlockActivated = true;
         QuestionBlock.SetActive(false);
         DeadBlock.SetActive(true);
-        Wait();
-        Mushroom.SetActive(true);
-        
-
-        
-    }
-
-    public IEnumerator Wait()
-    {
         yield return new WaitForSeconds(0.2f);
-
+        Mushroom.SetActive(true);
     }
+
+    
 }

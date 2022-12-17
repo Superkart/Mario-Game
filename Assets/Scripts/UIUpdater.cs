@@ -18,7 +18,7 @@ public class UIUpdater : MonoBehaviour
     {
         if (LivesText != null)
         {
-            LivesText.text = GamePersistantData.GetPersistantData().CurrentGameLives.ToString(); 
+            LivesText.text = "Lives: "+GamePersistantData.GetPersistantData().CurrentGameLives.ToString(); 
         }
     }
 }
