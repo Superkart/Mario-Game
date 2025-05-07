@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GamePersistantData : MonoBehaviour
 {
 
-    public static GamePersistantData persistantData = null;
+    public static GamePersistantData persistantData;
 
     [SerializeField]
     int GameLives = 3;
@@ -29,9 +27,5 @@ public class GamePersistantData : MonoBehaviour
         }
         return persistantData;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
